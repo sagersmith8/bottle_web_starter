@@ -14,7 +14,12 @@ def say_hi(name):
     	{
 	    'name': name
 	})
-
+	
+@route('/image')
+def show_image():
+	return respond(
+		'image.html',
+		{})
 
 @route('/static/<asset:path>')
 def serve_asset(asset):
