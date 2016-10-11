@@ -10,7 +10,7 @@ JINJA_ENV = Environment(
 
 @route('/hi/<name>')
 def say_hi(name):
-    respond('hi.html',
+    return respond('hi.html',
     	{
 	    'name': name
 	})
