@@ -4,7 +4,7 @@ import bottle
 
 
 JINJA_ENV = Environment(
-    loader=FileSystemLoader('/templates/'),
+    loader=FileSystemLoader('templates/'),
     extensions=['jinja2.ext.autoescape']
 )
 
@@ -20,8 +20,8 @@ def say_hi(name):
 def serve_asset(asset):
     return bottle.static_file(asset, root='static/')
 
-def respond(templtae_file, params):
+def respond(template_file, params):
     tpl = JINJA_ENV.get_template(template_file)
-    return tp.render(**params)
+    return tpl.render(**params)
 
 run(host='localhost', port='8080', debug=True)
